@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio - Developer 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Capsule Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="switch-btn">&larr; Portal</a>
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="#profile" class="nav-item">Profile</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="user2.html" class="switch-btn">Developer 2 &rarr;</a>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="card">
+            <h1>Hello, I'm <span id="name-tag">Developer 1</span></h1>
+            <p>Welcome to my personal portfolio space.</p>
+            <button id="color-btn">Change Pink Accent</button>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="card">
+            <h2>Profile</h2>
+            <p>นักเรียน 42 Piscine สนใจการพัฒนาโครงสร้าง Web Applications, Clean UI Design และ Logic Scripting</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="card">
+            <h2>Skills</h2>
+            <table class="skills-table">
+                <tr>
+                    <th>Technology</th>
+                    <th>Level</th>
+                </tr>
+                <tr>
+                    <td>HTML5 / CSS3 Layouts</td>
+                    <td>Advanced</td>
+                </tr>
+                <tr>
+                    <td>Vanilla JS & Modulo Logic</td>
+                    <td>Intermediate</td>
+                </tr>
+                <tr>
+                    <td>jQuery Integration</td>
+                    <td>Intermediate</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="card">
+            <h2>Experience</h2>
+            <ul>
+                <li>42 Discovery Piscine Web (Cell 00 - Cell 03)</li>
+                <li>Responsive Layouts & DOM Manipulation Projects</li>
+                <li>Team Portfolio SPA Architecture Design</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            <p>Email: user1@student.42.fr</p>
+            <p>GitHub: github.com/user1</p>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
