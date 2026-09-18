@@ -1,13 +1,6 @@
-// =============================================================
-// Portfolio site — shared behaviour
-// 1) Mobile navbar toggle
-// 2) Highlight the active nav link while scrolling
-// 3) Animate skill bars into view
-// =============================================================
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- 1) Mobile nav toggle ---------- */
+  /*  Mobile nav toggle  */
   const toggle = document.querySelector('.nav-toggle');
   const links  = document.querySelector('.nav-links');
 
@@ -18,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // close the menu after a link is tapped (mobile)
+    //mobile
     links.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => links.classList.remove('open'));
     });
   }
 
-  /* ---------- 2) Scroll-spy: highlight current section ---------- */
+  /* Scroll-spy: highlight current section */
   const sections = document.querySelectorAll('main section[id]');
   const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
@@ -43,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => spy.observe(section));
   }
 
-  /* ---------- 3) Animate skill bars when they scroll into view ---------- */
+  /* Animate skill bars when they scroll into view */
   const bars = document.querySelectorAll('.bar-fill[data-value]');
 
   if (bars.length) {
