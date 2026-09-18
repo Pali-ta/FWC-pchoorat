@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /*  Mobile nav toggle  */
   const toggle = document.querySelector('.nav-toggle');
   const links  = document.querySelector('.nav-links');
 
@@ -11,13 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    //mobile
     links.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => links.classList.remove('open'));
     });
   }
 
-  /* Scroll-spy: highlight current section */
   const sections = document.querySelectorAll('main section[id]');
   const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
@@ -36,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => spy.observe(section));
   }
 
-  /* Animate skill bars when they scroll into view */
   const bars = document.querySelectorAll('.bar-fill[data-value]');
 
   if (bars.length) {
