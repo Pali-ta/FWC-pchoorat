@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Team Portfolio - Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose a Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="landing-body">
+<body>
 
-    <div class="landing-container">
-        <h1>Welcome to Our Portfolio</h1>
-        <p>Select a profile to explore</p>
+<div class="home-wrap">
+  <p class="home-eyebrow">Portfolio Gallery</p>
+  <h1>Whose work would you like to <span class="hl">see</span> first?</h1>
+  <p class="home-sub">Pick a card below to view the details.</p>
 
-        <div class="card-grid">
-            <!-- การ์ด Developer 1 (ของคุณ) -->
-            <a href="user1.html" class="portal-card">
-                <img src="images.jpg" alt="Fill" class="profile-photo">
-                <h2>Developer 1</h2>
-                <p>View My Profile & Experience</p>
-                <span class="btn-link">Enter Profile &rarr;</span>
-            </a>
+  <div class="person-picker">
+    <a class="person-card" href="fill.html">
+      <img class="avatar" alt="Palita Choorat" src="img/fill_image.jpg">
+      <p class="p-name">Palita Choorat</p>
+      <p class="p-role">Computer Engineering</p>
+      <span class="p-cta">View portfolio →</span>
+    </a>
 
-            <!-- การ์ด Developer 2 (ของเพื่อน) -->
-            <a href="user2.html" class="portal-card">
-                <img src="barbiiii" alt="Nill" class="profile-photo">
-                <h2>Developer 2</h2>
-                <p>View Friend's Profile & Experience</p>
-                <span class="btn-link">Enter Profile &rarr;</span>
-            </a>
-        </div>
-    </div>
+    <a class="person-card" href="nill.html">
+      <img class="avatar" alt="Nattawat Uponno" src="img/nill_image.jpg">
+      <p class="p-name">Nattawat Uponno</p>
+      <p class="p-role">Computer Engineering</p>
+      <span class="p-cta">View portfolio →</span>
+    </a>
+  </div>
+</div>
 
-    <script src="main.js"></script>
 </body>
 </html>

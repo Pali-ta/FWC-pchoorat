@@ -1,59 +1,62 @@
-// ==========================================
-// 1. Vanilla JS: ระบบเปลี่ยนสีโทนชมพูด้วย Modulo (%) (cell03/ex01)
-// ==========================================
-const colorBtn = document.getElementById('color-btn');
-const nameTag = document.getElementById('name-tag');
+// =============================================================
+// Portfolio site — shared behaviour
+// 1) Mobile navbar toggle
+// 2) Highlight the active nav link while scrolling
+// 3) Animate skill bars into view
+// =============================================================
 
-const pinkShades = ['#be185d', '#f472b6', '#fb7185', '#ec4899', '#db2777'];
-let colorIndex = 0;
+document.addEventListener('DOMContentLoaded', () => {
 
-const changePinkAccent = () => {
-    colorIndex = (colorIndex + 1) % pinkShades.length;
-    if (nameTag) {
-        nameTag.style.color = pinkShades[colorIndex];
-    }
-};
+  /* ---------- 1) Mobile nav toggle ---------- */
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
 
-if (colorBtn) {
-    colorBtn.addEventListener('click', changePinkAccent);
-}
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+      const isOpen = links.classList.contains('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
+    // close the menu after a link is tapped (mobile)
+    links.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => links.classList.remove('open'));
+    });
+  }
 
-// ==========================================
-// 2. jQuery: Smooth Scroll + ScrollSpy (cell03/ex04)
-// ==========================================
-$(document).ready(function () {
-    
-    // Smooth Scroll เมื่อคลิกเมนู Navbar
-    $('.nav-item').on('click', function (e) {
-        const targetAttr = $(this).attr('href');
-        
-        if (targetAttr.startsWith('#')) {
-            e.preventDefault();
-            const targetSection = $(targetAttr);
-            
-            if (targetSection.length) {
-                $('html, body').animate({
-                    scrollTop: targetSection.offset().top - 80
-                }, 500);
-            }
+  /* ---------- 2) Scroll-spy: highlight current section ---------- */
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  if (sections.length && navAnchors.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAnchors.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+          });
         }
-    });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
 
-    // ScrollSpy Highlight เมนูตามตำแหน่งเลื่อนหน้าจอ
-    $(window).on('scroll', function () {
-        const scrollPos = $(window).scrollTop() + 100;
+    sections.forEach(section => spy.observe(section));
+  }
 
-        $('section').each(function () {
-            const sectionTop = $(this).offset().top;
-            const sectionBottom = sectionTop + $(this).outerHeight();
-            const sectionId = $(this).attr('id');
+  /* ---------- 3) Animate skill bars when they scroll into view ---------- */
+  const bars = document.querySelectorAll('.bar-fill[data-value]');
 
-            if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                $('.nav-item').removeClass('active');
-                $('.nav-item[href="#' + sectionId + '"]').addClass('active');
-            }
-        });
-    });
+  if (bars.length) {
+    const barObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.width = el.dataset.value + '%';
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
 
+    bars.forEach(bar => barObserver.observe(bar));
+  }
 });

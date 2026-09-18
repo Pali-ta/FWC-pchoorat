@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(135deg, #ffe4e6 0%, #fef3c7 100%);
+    font-family: sans-serif;
+}
+
+.calculator {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 24px;
+    border: none; 
+    box-shadow: 0 10px 30px rgba(244, 114, 182, 0.2);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+input[type="text"], select {
+    padding: 12px 16px;
+    border-radius: 16px;
+    border: none; 
+    background-color: #fef08a; 
+    color: #713f12;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    transition: transform 0.2s;
+}
+
+input[type="text"]::placeholder {
+    color: #a16207; 
+    font-weight: normal;
+}
+
+select option {
+    background-color: #fef9c3; 
+    color: #713f12; 
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+}
+
+select {
+    cursor: pointer;
+    text-align: center;
+    color: #713f12;
+}
+
+input[type="submit"] {
+    padding: 12px 22px;
+    border-radius: 16px;
+    border: none; 
+    background-color: #f472b6; 
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.35);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #fb7185; 
+    transform: scale(1.05); 
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
