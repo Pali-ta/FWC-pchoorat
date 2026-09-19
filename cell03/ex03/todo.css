@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+}
+
+
+#new_btn {
+  background-color: #2b525f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px black;
+}
+
+#new_btn:hover {
+  background-color: rgb(15, 137, 80); 
+}
+
+
+#ft_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%; 
+  max-width: 300px;
+}
+
+
+.todo-item {
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px black;
+  cursor: pointer;
+  font-size: 15px;
+  word-break: break-all; 
+}
+
+.todo-item:hover {
+  background-color: rgb(241, 241, 177); 
+}
