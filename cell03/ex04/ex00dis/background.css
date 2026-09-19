@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+}
